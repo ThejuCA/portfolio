@@ -1,17 +1,24 @@
-<?php
+<?PHP
 
-if($_POST["submit"]) {
-    $recipient="thejuanand1989@email.address";
-    $subject="Form to email message";
-    $sender=$_POST["sender"];
-    $senderEmail=$_POST["senderEmail"];
-    $message=$_POST["message"];
+$user_name = "lnw_16618010";
+$password = "thejunan";
+$database = "lnw_16618010_porfolio";
+$server = "sql210.lockernerd.co.uk";
 
-    $mailBody="Name: $sender\nEmail: $senderEmail\n\n$message";
+$db_handle = mysql_connect($server, $user_name, $password);
 
-    mail($recipient, $subject, $mailBody, "From: $sender <$senderEmail>");
+$db_found = mysql_select_db($database, $db_handle);
 
-    $thankYou="<p>Thank you! Your message has been sent.</p>";
+if ($db_found) {
+
+echo "Database Found ";
+mysql_close($db_handle);
+
+}
+else {
+
+echo "Database NOT Found ";
+
 }
 
 ?>
