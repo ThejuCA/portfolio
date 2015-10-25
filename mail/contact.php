@@ -1,24 +1,21 @@
 <?PHP
 
-$user_name = "lnw_16618010";
-$password = "thejunan";
-$database = "lnw_16618010_porfolio";
-$server = "sql210.lockernerd.co.uk";
 
-$db_handle = mysql_connect($server, $user_name, $password);
+$host="sql210.lockernerd.co.uk";
+$user="lnw_16618010";
+$password="thejunan";
 
-$db_found = mysql_select_db($database, $db_handle);
+$con=mysql_connect($host,$user,$password);
 
-if ($db_found) {
-
-echo "Database Found ";
-mysql_close($db_handle);
-
+if(!$con) {
+  echo '<h1>Connected to MySQL</h1>';
+  //if connected then Select Database.
+  $db=mysql_select_db("YOUR_DATABASE_NAME",$con);
+  $query=mysql_query("YOUR_MYSQL_QUERY",$db);
 }
 else {
-
-echo "Database NOT Found ";
-
+  echo '<h1>MySQL Server is not connected</h1>';
 }
+
 
 ?>
