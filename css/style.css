@@ -1,0 +1,16 @@
+.objective-left-font{
+	font-size: 25px;
+	font-family: 'Comic Sans, Comic Sans MS, cursive';
+
+}
+.objective-right-font{
+	font-size: 12px;
+	font-family: 'Comic Sans, Comic Sans MS, cursive';
+    
+}
+  .Resume_clip_img{
+        background-image: url("img/portfolio/clip1.jpg");
+        background-size: 500px 500px;
+        background-repeat: no-repeat;
+    }
+    
